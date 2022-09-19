@@ -1,11 +1,9 @@
-# Obsidian Sakana Widget
-
 <p align="center">
 <img src="https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/chisato.png" height="160px">
 <img src="https://raw.githubusercontent.com/dsrkafuu/sakana-widget/main/src/characters/takina.png" height="160px">
 </p>
 
-# 🐟「Sakana! Widget」
+# Obsidian -- 🐟「Sakana! Widget」
 
 **Note:** Add the Sakana! Widget to your own Obsidian! You can play with it when you are writing notes.
 
