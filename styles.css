@@ -6,3 +6,12 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.sakana-widget-box {
+	position: fixed;
+	bottom: 30px;
+	right: 15px;
+	/* min-width / height: 120px */
+	width: 150px;
+	height: 150px;
+}
