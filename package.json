@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-sakana-widget",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "Add the Sakana! Widget to your own Obsidian!",
 	"main": "main.js",
 	"scripts": {

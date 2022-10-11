@@ -17,7 +17,7 @@
 
 ## From BRAT
 
-🚗: Add `Quorafind/obsidian-sakana-widget` to BRAT.
+🚗: Add `Quorafind/obsidian-sakana-sakanaWidget` to BRAT.
 
 ## Download Manually
 
@@ -25,6 +25,6 @@
 
 # License
 
-Released under MIT License, please note that the 2 default images **should not be used for any commercial activities**. This project used to be a secondary development based on https://github.com/itorr/sakana | https://github.com/dsrkafuu/sakana-widget.
+Released under MIT License, please note that the 2 default images **should not be used for any commercial activities**. This project used to be a secondary development based on https://github.com/itorr/sakana | https://github.com/dsrkafuu/sakana-sakanaWidget.
 
 Image source: 大伏アオ [@blue00f4](https://twitter.com/blue00f4) [pixiv](https://pixiv.me/aoiroblue1340)
