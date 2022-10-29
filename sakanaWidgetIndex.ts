@@ -52,7 +52,7 @@ export default class SakanaWidgetPlugin extends Plugin {
 		this.sakanaBoxEl = document.body.createEl('div', { attr: { id: 'sakana-widget-box' }, cls: 'sakana-widget-box' });
 		this.sakanaEl = this.sakanaBoxEl.createEl('div', { attr: { id: 'sakana-widget' }, cls: 'sakana-widget' });
 
-		this.sakanaWidget = new SakanaWidget({ character: this.settings.lastWidget, autoFit: true }).setState({ i: 0.03, d: 0.99,  }).mount('#sakana-widget');
+		this.sakanaWidget = new SakanaWidget({ character: this.settings.lastWidget ?? 'chisato' , autoFit: true }).setState({ i: 0.03, d: 0.99,  }).mount('#sakana-widget');
 
 	}
 
