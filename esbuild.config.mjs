@@ -1,6 +1,7 @@
 import esbuild from "esbuild";
 import process from "process";
-import builtins from 'builtin-modules'
+import builtins from 'builtin-modules';
+import svg from 'esbuild-plugin-svg';
 
 const banner =
 `/*
@@ -39,4 +40,8 @@ esbuild.build({
 	sourcemap: prod ? false : 'inline',
 	treeShaking: true,
 	outfile: 'main.js',
+	plugins: [svg()],
+	loader: {
+		".png": "dataurl",
+	}
 }).catch(() => process.exit(1));
