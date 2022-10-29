@@ -59,7 +59,6 @@ export function throttle<T extends (...args: any[]) => any>(callback: T): T {
   const throttled = function (...args: any[]) {
     lastArgs = args;
     if (requestId === null) {
-      // @ts-expect-error this refers to context inherited from outside
       requestId = requestAnimationFrame(later(this));
     }
   } as T;
