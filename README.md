@@ -9,6 +9,9 @@
 
 ![](https://raw.githubusercontent.com/Quorafind/obsidian-sakana-widget/master/media/sakanaGif.gif)
 
+- Settings
+  - Now you can add your own widget to the Sakana! Widget.
+
 # How to Install
 
 ## From Plugin Market in Obsidian [Not Yet]
