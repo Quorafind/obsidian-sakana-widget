@@ -7,6 +7,17 @@ import characters from './characters';
 import { svgClose, svgGitHub, svgPerson, svgSync } from './icons';
 import { cloneDeep, mergeDeep, throttle, getCanvasCtx } from './utils';
 
+declare module "obsidian" {
+	interface App {
+		plugins: {
+			enabledPlugins: Set<string>;
+			plugins: {
+				[id: string]: any;
+			};
+		}
+	}
+}
+
 interface SakanaWidgetOptions {
   /**
    * widget size, default to `200`
@@ -77,7 +88,7 @@ class SakanaWidget {
   private _magicForceEnabled = false;
 
   // character related
-  private _char!: string;
+  public _char!: string;
   private _image!: string;
   private _state!: SakanaWidgetState;
 
