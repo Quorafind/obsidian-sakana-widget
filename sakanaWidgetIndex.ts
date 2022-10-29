@@ -22,7 +22,10 @@ export default class SakanaWidgetPlugin extends Plugin {
 		// Register Settings Stuff
 		await this.registerSettings();
 
-		this.app.workspace.onLayoutReady(()=> this.addSakanaWidget());
+		this.app.workspace.onLayoutReady(()=> {
+			this.loadSakanaWidgets();
+			this.addSakanaWidget();
+		});
 
 		this.addCommand({
 			id: 'show-sakana-widget',
@@ -93,11 +96,36 @@ export default class SakanaWidgetPlugin extends Plugin {
 		}
 	}
 
+	getCoverRealPath(imageUrl: string) {
+		if (!imageUrl) return "";
+
+		if (
+			imageUrl.startsWith("http://") ||
+			imageUrl.startsWith("https://")
+		) {
+			return imageUrl;
+		}
+
+		const file = app.metadataCache.getFirstLinkpathDest(imageUrl, "");
+
+		if (file) {
+			if (
+				["png", "jpg", "jpeg", "gif", "bmp", "svg"].includes(
+					file.extension
+				)
+			) {
+				return app.vault.getResourcePath(file);
+			}
+		}
+
+		return "";
+	}
+
 	loadSakanaWidgets() {
 		if(this.settings.widgets.length > 0) {
 			this.settings.widgets.forEach((widget) => {
 				const selfWidget = SakanaWidget.getCharacter('chisato');
-				if (selfWidget) selfWidget.image = widget.url;
+				if (selfWidget) selfWidget.image = this.getCoverRealPath(widget.url);
 				if (selfWidget) SakanaWidget.registerCharacter(widget.name, selfWidget);
 			});
 		}
@@ -105,7 +133,6 @@ export default class SakanaWidgetPlugin extends Plugin {
 
 	async loadSettings() {
 		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
-		this.loadSakanaWidgets();
 	}
 
 	async saveSettings() {
